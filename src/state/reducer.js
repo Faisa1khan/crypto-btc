@@ -16,6 +16,25 @@ export function Reducer(state, action) {
       };
     }
 
+    case actionTypes.setPrice: {
+      return {
+        ...state,
+        BTC: action.payload.BTC.USD,
+        LTC: action.payload.LTC.USD,
+        ETH: action.payload.ETH.USD,
+      };
+    }
+
+    case actionTypes.changeCurrency: {
+      console.log(action);
+      return {
+        ...state,
+        selected: action.payload.currency,
+        categories: [],
+        dataset: [],
+      };
+    }
+
     default: {
       throw new Error(`Unhandled type: ${action.type}`);
     }

@@ -13,6 +13,7 @@ const chartConfigs = {
   dataFormat: "json",
 };
 export const LiveChart = ({
+  name = "",
   categories,
   dataset,
   showChart,
@@ -21,7 +22,7 @@ export const LiveChart = ({
 }) => {
   const dataSource = {
     chart: {
-      caption: "Bitcoin Price Ticker",
+      caption: `${name} Price Ticker`,
       // subCaption: outDate,
       numberPrefix: "$",
       numdisplaysets: "10",
